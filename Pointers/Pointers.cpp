@@ -1,8 +1,9 @@
 #include <iostream>
 
-void manipulate(int value) {
-	value = 10;
-	std::cout << "value of int in manipulate: " << value << std::endl;
+void manipulate(double* value) {
+	std::cout << "2. value of int in manipulate: " << *value << std::endl;
+	*value = 10;
+	std::cout << "3. value of int in manipulate: " << *value << std::endl;
 }
 
 int main()
@@ -11,9 +12,15 @@ int main()
 	int* pnValue = &nValue;
 
 	std::cout << "int value: " << nValue << std::endl;
-	std::cout << "pinter to int address: " << pnValue << std::endl;
-	std::cout << "======================== " << pnValue << std::endl;
+	std::cout << "pointer to int address: " << pnValue << std::endl;
+	std::cout << "itn value via pointer:  " << *pnValue << std::endl;
+	std::cout << "======================== " << std::endl;
 
+	double dValue = 123.4;
+
+	std::cout << "1. dvalue: " << dValue << std::endl;
+	manipulate(&dValue);
+	std::cout << "4. dvalue : " << dValue << std::endl;
 
 	return 0;
 }
